@@ -1,0 +1,15 @@
+INSERT INTO `artikal` (`artikal_id`, `naziv_artikla`, `vrsta_artikla`, `cijena`) VALUES (1, 'Bajadera 100gr', 'Bombonjera', 5.00);
+INSERT INTO `artikal` (`artikal_id`, `naziv_artikla`, `vrsta_artikla`, `cijena`) VALUES (2, 'Bajadera 200gr', 'Bombonjera', 9.30);
+INSERT INTO `artikal` (`artikal_id`, `naziv_artikla`, `vrsta_artikla`, `cijena`) VALUES (3, 'Bajadera 300gr', 'Bombonjera', 13.85);
+INSERT INTO `artikal` (`artikal_id`, `naziv_artikla`, `vrsta_artikla`, `cijena`) VALUES (4, 'Bajadera 500gr', 'Bombonjera', 23.90);
+INSERT INTO `artikal` (`artikal_id`, `naziv_artikla`, `vrsta_artikla`, `cijena`) VALUES (5, 'Merci 250gr Milk', 'Bombonjera', 9.45);
+INSERT INTO `artikal` (`artikal_id`, `naziv_artikla`, `vrsta_artikla`, `cijena`) VALUES (6, 'Merci 250gr', 'Bombonjera', 8.80);
+INSERT INTO `artikal` (`artikal_id`, `naziv_artikla`, `vrsta_artikla`, `cijena`) VALUES (7, 'Coca Cola 0.33L', 'Piće', 1.10);
+INSERT INTO `artikal` (`artikal_id`, `naziv_artikla`, `vrsta_artikla`, `cijena`) VALUES (8, 'Coca Cola 0.5L', 'Piće', 1.15);
+INSERT INTO `artikal` (`artikal_id`, `naziv_artikla`, `vrsta_artikla`, `cijena`) VALUES (9, 'Coca Cola 2L', 'Piće', 2.50);
+INSERT INTO `artikal` (`artikal_id`, `naziv_artikla`, `vrsta_artikla`, `cijena`) VALUES (10, 'Fanta orange 0.5L', 'Piće', 1.15);
+INSERT INTO `artikal` (`artikal_id`, `naziv_artikla`, `vrsta_artikla`, `cijena`) VALUES (11, 'Fanta shokata 0.5', 'Piće', 1.15);
+INSERT INTO `artikal` (`artikal_id`, `naziv_artikla`, `vrsta_artikla`, `cijena`) VALUES (12, 'Fanta tropicool 0.5L', 'Piće', 1.15);
+INSERT INTO `artikal` (`artikal_id`, `naziv_artikla`, `vrsta_artikla`, `cijena`) VALUES (13, 'Fanta orange 2L', 'Piće', 2.45);
+INSERT INTO `artikal` (`artikal_id`, `naziv_artikla`, `vrsta_artikla`, `cijena`) VALUES (14, 'Fanta shokata 2L', 'Piće', 2.45);
+INSERT INTO `artikal` (`artikal_id`, `naziv_artikla`, `vrsta_artikla`, `cijena`) VALUES (15, 'Fanta tropicool 2L', 'Piće', 2.45);

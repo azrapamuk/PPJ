@@ -1,0 +1,11 @@
+C:\Users\Genius\Desktop\Projektni\Projektni\bin\Debug\Projektni.exe
+C:\Users\Genius\Desktop\Projektni\Projektni\bin\Debug\Projektni.pdb
+C:\Users\Genius\Desktop\Projektni\Projektni\obj\x86\Debug\WindowsFormsApplication1.Form1.resources
+C:\Users\Genius\Desktop\Projektni\Projektni\obj\x86\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\Genius\Desktop\Projektni\Projektni\obj\x86\Debug\Projektni.csproj.GenerateResource.Cache
+C:\Users\Genius\Desktop\Projektni\Projektni\obj\x86\Debug\Projektni.exe
+C:\Users\Genius\Desktop\Projektni\Projektni\obj\x86\Debug\Projektni.pdb
+C:\Users\Genius\Desktop\Projektni\Projektni\obj\x86\Debug\WindowsFormsApplication1.Form2.resources
+C:\Users\Genius\Desktop\Projektni\Projektni\obj\x86\Debug\WindowsFormsApplication1.Form3.resources
+C:\Users\Genius\Desktop\Projektni\Projektni\bin\Debug\MySql.Data.dll
+C:\Users\Genius\Desktop\Projektni\Projektni\obj\x86\Debug\Projektni.csprojResolveAssemblyReference.cache
