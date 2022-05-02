@@ -13,7 +13,7 @@ namespace WindowsFormsApplication1
     public partial class Form1 : Form
     {
 
-        String konekcionistring = "Server=localhost; Port=3306; Database=projekat;Uid=root;Pwd=azra";
+        public static String konekcionistr = "Server=localhost; Port=3306; Database=projekt;Uid=root;Pwd=azra";
         public Form1()
         {
             InitializeComponent();
@@ -24,6 +24,8 @@ namespace WindowsFormsApplication1
 
             Prijava(); 
         }
+
+        public static String kupacID;
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -38,12 +40,12 @@ namespace WindowsFormsApplication1
             string korime = textBoxKorisnickoIme.Text;
             string sifra = textBoxSifra.Text;
 
-            String upit = "SELECT pass, kupac_id FROM kupac WHERE user='" + korime + "';";
+            String upit = "SELECT pass, kupac_id,ime FROM kupac WHERE user='" + korime + "';";
             
 
             try
             {
-                MySqlConnection konekcija = new MySqlConnection(konekcionistring);
+                MySqlConnection konekcija = new MySqlConnection(konekcionistr);
                 konekcija.Open();
 
                 MySqlCommand cmd = new MySqlCommand(upit, konekcija);
@@ -64,13 +66,16 @@ namespace WindowsFormsApplication1
                     }
                     else
                     {
-                        if (reader[1].ToString() == "1")
+                        kupacID = reader[1].ToString();
+
+                        string ime = reader[2].ToString();
+                        if (kupacID == "1")
                         {
-                            Administrator();
+                            Administrator(ime);
                         }
                         else
                         {
-                            Kupac();
+                            Kupac(ime);
                         }
                     }
                 }
@@ -83,15 +88,17 @@ namespace WindowsFormsApplication1
             }
         }
 
-        private void Administrator()
+        private void Administrator(string imelogin)
         {
+            MessageBox.Show("Dobrodošli " + imelogin + "!");
             this.Hide();
             Form2 f2=new Form2();
             f2.Show();
         }
 
-        private void Kupac()
+        private void Kupac(string imelogin)
         {
+            MessageBox.Show("Dobrodošli " + imelogin + "!");
             this.Hide();
             Form3 f3 = new Form3();
             f3.Show();

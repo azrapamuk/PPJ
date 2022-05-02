@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.TabPage tabPage1;
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.buttonAzurirajKupca = new System.Windows.Forms.Button();
             this.buttonKreirajKupca = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
@@ -50,13 +52,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.buttonTraziKupac = new System.Windows.Forms.Button();
             this.tabControlAdministrator = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.label9 = new System.Windows.Forms.Label();
             this.numericUpDownKolicina = new System.Windows.Forms.NumericUpDown();
-            this.buttonAzurirajKolicinu = new System.Windows.Forms.Button();
-            this.buttonDodajKolicinu = new System.Windows.Forms.Button();
+            this.buttonAzurirajArtikal = new System.Windows.Forms.Button();
+            this.buttonDodajArtikal = new System.Windows.Forms.Button();
             this.label17 = new System.Windows.Forms.Label();
             this.textBoxIDartikla = new System.Windows.Forms.TextBox();
             this.textBoxKolicinaArtikala = new System.Windows.Forms.TextBox();
@@ -64,18 +65,18 @@
             this.textBoxVrstaArtikla = new System.Windows.Forms.TextBox();
             this.textBoxNazivArtikla = new System.Windows.Forms.TextBox();
             this.textBoxNazivTrazi = new System.Windows.Forms.TextBox();
-            this.textBoxSifraArtikla = new System.Windows.Forms.TextBox();
+            this.textBoxSifraTrazi = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.buttonTraziArtikal = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxNarudzba = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             tabPage1 = new System.Windows.Forms.TabPage();
             tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -85,6 +86,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabPage1
@@ -113,7 +115,6 @@
             tabPage1.Controls.Add(this.label2);
             tabPage1.Controls.Add(this.label1);
             tabPage1.Controls.Add(this.dataGridView1);
-            tabPage1.Controls.Add(this.buttonTraziKupac);
             tabPage1.ForeColor = System.Drawing.SystemColors.ControlText;
             tabPage1.Location = new System.Drawing.Point(4, 22);
             tabPage1.Name = "tabPage1";
@@ -166,6 +167,7 @@
             this.textBoxIDKupacAzuriraj.Name = "textBoxIDKupacAzuriraj";
             this.textBoxIDKupacAzuriraj.Size = new System.Drawing.Size(48, 19);
             this.textBoxIDKupacAzuriraj.TabIndex = 16;
+            this.textBoxIDKupacAzuriraj.TextChanged += new System.EventHandler(this.textBoxIDKupacAzuriraj_TextChanged);
             // 
             // textBoxKorIme
             // 
@@ -218,17 +220,19 @@
             // 
             // textBoxPrezimeTrazi
             // 
-            this.textBoxPrezimeTrazi.Location = new System.Drawing.Point(161, 6);
+            this.textBoxPrezimeTrazi.Location = new System.Drawing.Point(231, 6);
             this.textBoxPrezimeTrazi.Name = "textBoxPrezimeTrazi";
-            this.textBoxPrezimeTrazi.Size = new System.Drawing.Size(113, 19);
+            this.textBoxPrezimeTrazi.Size = new System.Drawing.Size(85, 19);
             this.textBoxPrezimeTrazi.TabIndex = 1;
+            this.textBoxPrezimeTrazi.TextChanged += new System.EventHandler(this.textBoxPrezimeTrazi_TextChanged);
             // 
             // textBoxTraziIme
             // 
-            this.textBoxTraziIme.Location = new System.Drawing.Point(29, 6);
+            this.textBoxTraziIme.Location = new System.Drawing.Point(131, 6);
             this.textBoxTraziIme.Name = "textBoxTraziIme";
-            this.textBoxTraziIme.Size = new System.Drawing.Size(113, 19);
+            this.textBoxTraziIme.Size = new System.Drawing.Size(85, 19);
             this.textBoxTraziIme.TabIndex = 0;
+            this.textBoxTraziIme.TextChanged += new System.EventHandler(this.textBoxTraziIme_TextChanged);
             // 
             // label7
             // 
@@ -302,26 +306,20 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Lucida Console", 9F, System.Drawing.FontStyle.Italic);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(29, 34);
+            this.dataGridView1.Location = new System.Drawing.Point(8, 34);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(729, 179);
+            this.dataGridView1.Size = new System.Drawing.Size(770, 180);
             this.dataGridView1.TabIndex = 3;
-            // 
-            // buttonTraziKupac
-            // 
-            this.buttonTraziKupac.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.buttonTraziKupac.Cursor = System.Windows.Forms.Cursors.Default;
-            this.buttonTraziKupac.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonTraziKupac.Font = new System.Drawing.Font("Lucida Console", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonTraziKupac.ForeColor = System.Drawing.Color.White;
-            this.buttonTraziKupac.Location = new System.Drawing.Point(290, 6);
-            this.buttonTraziKupac.Name = "buttonTraziKupac";
-            this.buttonTraziKupac.Size = new System.Drawing.Size(94, 22);
-            this.buttonTraziKupac.TabIndex = 2;
-            this.buttonTraziKupac.Text = "Traži";
-            this.buttonTraziKupac.UseVisualStyleBackColor = false;
-            this.buttonTraziKupac.Click += new System.EventHandler(this.buttonTraziKupac_Click);
             // 
             // tabControlAdministrator
             // 
@@ -341,8 +339,8 @@
             this.tabPage2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.tabPage2.Controls.Add(this.label9);
             this.tabPage2.Controls.Add(this.numericUpDownKolicina);
-            this.tabPage2.Controls.Add(this.buttonAzurirajKolicinu);
-            this.tabPage2.Controls.Add(this.buttonDodajKolicinu);
+            this.tabPage2.Controls.Add(this.buttonAzurirajArtikal);
+            this.tabPage2.Controls.Add(this.buttonDodajArtikal);
             this.tabPage2.Controls.Add(this.label17);
             this.tabPage2.Controls.Add(this.textBoxIDartikla);
             this.tabPage2.Controls.Add(this.textBoxKolicinaArtikala);
@@ -350,13 +348,12 @@
             this.tabPage2.Controls.Add(this.textBoxVrstaArtikla);
             this.tabPage2.Controls.Add(this.textBoxNazivArtikla);
             this.tabPage2.Controls.Add(this.textBoxNazivTrazi);
-            this.tabPage2.Controls.Add(this.textBoxSifraArtikla);
+            this.tabPage2.Controls.Add(this.textBoxSifraTrazi);
             this.tabPage2.Controls.Add(this.label19);
             this.tabPage2.Controls.Add(this.label20);
             this.tabPage2.Controls.Add(this.label23);
             this.tabPage2.Controls.Add(this.label24);
             this.tabPage2.Controls.Add(this.dataGridView3);
-            this.tabPage2.Controls.Add(this.buttonTraziArtikal);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -387,31 +384,33 @@
             this.numericUpDownKolicina.Size = new System.Drawing.Size(48, 19);
             this.numericUpDownKolicina.TabIndex = 42;
             // 
-            // buttonAzurirajKolicinu
+            // buttonAzurirajArtikal
             // 
-            this.buttonAzurirajKolicinu.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.buttonAzurirajKolicinu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAzurirajKolicinu.Font = new System.Drawing.Font("Lucida Console", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAzurirajKolicinu.ForeColor = System.Drawing.Color.White;
-            this.buttonAzurirajKolicinu.Location = new System.Drawing.Point(571, 312);
-            this.buttonAzurirajKolicinu.Name = "buttonAzurirajKolicinu";
-            this.buttonAzurirajKolicinu.Size = new System.Drawing.Size(150, 23);
-            this.buttonAzurirajKolicinu.TabIndex = 41;
-            this.buttonAzurirajKolicinu.Text = "Ažuriraj artikal";
-            this.buttonAzurirajKolicinu.UseVisualStyleBackColor = false;
+            this.buttonAzurirajArtikal.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.buttonAzurirajArtikal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAzurirajArtikal.Font = new System.Drawing.Font("Lucida Console", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAzurirajArtikal.ForeColor = System.Drawing.Color.White;
+            this.buttonAzurirajArtikal.Location = new System.Drawing.Point(571, 312);
+            this.buttonAzurirajArtikal.Name = "buttonAzurirajArtikal";
+            this.buttonAzurirajArtikal.Size = new System.Drawing.Size(150, 23);
+            this.buttonAzurirajArtikal.TabIndex = 41;
+            this.buttonAzurirajArtikal.Text = "Ažuriraj artikal";
+            this.buttonAzurirajArtikal.UseVisualStyleBackColor = false;
+            this.buttonAzurirajArtikal.Click += new System.EventHandler(this.buttonAzurirajArtikal_Click);
             // 
-            // buttonDodajKolicinu
+            // buttonDodajArtikal
             // 
-            this.buttonDodajKolicinu.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.buttonDodajKolicinu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonDodajKolicinu.Font = new System.Drawing.Font("Lucida Console", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonDodajKolicinu.ForeColor = System.Drawing.Color.White;
-            this.buttonDodajKolicinu.Location = new System.Drawing.Point(282, 312);
-            this.buttonDodajKolicinu.Name = "buttonDodajKolicinu";
-            this.buttonDodajKolicinu.Size = new System.Drawing.Size(126, 23);
-            this.buttonDodajKolicinu.TabIndex = 40;
-            this.buttonDodajKolicinu.Text = "Dodaj artikal";
-            this.buttonDodajKolicinu.UseVisualStyleBackColor = false;
+            this.buttonDodajArtikal.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.buttonDodajArtikal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDodajArtikal.Font = new System.Drawing.Font("Lucida Console", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDodajArtikal.ForeColor = System.Drawing.Color.White;
+            this.buttonDodajArtikal.Location = new System.Drawing.Point(282, 312);
+            this.buttonDodajArtikal.Name = "buttonDodajArtikal";
+            this.buttonDodajArtikal.Size = new System.Drawing.Size(126, 23);
+            this.buttonDodajArtikal.TabIndex = 40;
+            this.buttonDodajArtikal.Text = "Dodaj artikal";
+            this.buttonDodajArtikal.UseVisualStyleBackColor = false;
+            this.buttonDodajArtikal.Click += new System.EventHandler(this.buttonDodajArtikal_Click_1);
             // 
             // label17
             // 
@@ -429,6 +428,7 @@
             this.textBoxIDartikla.Name = "textBoxIDartikla";
             this.textBoxIDartikla.Size = new System.Drawing.Size(48, 19);
             this.textBoxIDartikla.TabIndex = 38;
+            this.textBoxIDartikla.TextChanged += new System.EventHandler(this.textBoxIDartikla_TextChanged);
             // 
             // textBoxKolicinaArtikala
             // 
@@ -460,23 +460,25 @@
             // 
             // textBoxNazivTrazi
             // 
-            this.textBoxNazivTrazi.Location = new System.Drawing.Point(89, 6);
+            this.textBoxNazivTrazi.Location = new System.Drawing.Point(168, 6);
             this.textBoxNazivTrazi.Name = "textBoxNazivTrazi";
             this.textBoxNazivTrazi.Size = new System.Drawing.Size(113, 19);
             this.textBoxNazivTrazi.TabIndex = 21;
+            this.textBoxNazivTrazi.TextChanged += new System.EventHandler(this.textBoxNazivTrazi_TextChanged);
             // 
-            // textBoxSifraArtikla
+            // textBoxSifraTrazi
             // 
-            this.textBoxSifraArtikla.Location = new System.Drawing.Point(29, 6);
-            this.textBoxSifraArtikla.Name = "textBoxSifraArtikla";
-            this.textBoxSifraArtikla.Size = new System.Drawing.Size(54, 19);
-            this.textBoxSifraArtikla.TabIndex = 20;
+            this.textBoxSifraTrazi.Location = new System.Drawing.Point(108, 6);
+            this.textBoxSifraTrazi.Name = "textBoxSifraTrazi";
+            this.textBoxSifraTrazi.Size = new System.Drawing.Size(54, 19);
+            this.textBoxSifraTrazi.TabIndex = 20;
+            this.textBoxSifraTrazi.TextChanged += new System.EventHandler(this.textBoxSifraTrazi_TextChanged);
             // 
             // label19
             // 
             this.label19.AutoSize = true;
             this.label19.BackColor = System.Drawing.Color.Transparent;
-            this.label19.Location = new System.Drawing.Point(242, 264);
+            this.label19.Location = new System.Drawing.Point(234, 264);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(68, 12);
             this.label19.TabIndex = 36;
@@ -514,32 +516,19 @@
             // 
             // dataGridView3
             // 
+            this.dataGridView3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView3.Location = new System.Drawing.Point(29, 34);
             this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.Size = new System.Drawing.Size(729, 179);
+            this.dataGridView3.Size = new System.Drawing.Size(727, 179);
             this.dataGridView3.TabIndex = 23;
-            // 
-            // buttonTraziArtikal
-            // 
-            this.buttonTraziArtikal.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.buttonTraziArtikal.Cursor = System.Windows.Forms.Cursors.Default;
-            this.buttonTraziArtikal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonTraziArtikal.Font = new System.Drawing.Font("Lucida Console", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonTraziArtikal.ForeColor = System.Drawing.Color.White;
-            this.buttonTraziArtikal.Location = new System.Drawing.Point(214, 6);
-            this.buttonTraziArtikal.Name = "buttonTraziArtikal";
-            this.buttonTraziArtikal.Size = new System.Drawing.Size(94, 22);
-            this.buttonTraziArtikal.TabIndex = 22;
-            this.buttonTraziArtikal.Text = "Traži";
-            this.buttonTraziArtikal.UseVisualStyleBackColor = false;
             // 
             // tabPage3
             // 
             this.tabPage3.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.bg1;
             this.tabPage3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.tabPage3.Controls.Add(this.button1);
-            this.tabPage3.Controls.Add(this.textBox1);
+            this.tabPage3.Controls.Add(this.textBoxNarudzba);
             this.tabPage3.Controls.Add(this.label10);
             this.tabPage3.Controls.Add(this.dataGridView2);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
@@ -562,13 +551,14 @@
             this.button1.TabIndex = 3;
             this.button1.Text = "Brisanje narudžbe";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textBox1
+            // textBoxNarudzba
             // 
-            this.textBox1.Location = new System.Drawing.Point(541, 313);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(77, 19);
-            this.textBox1.TabIndex = 2;
+            this.textBoxNarudzba.Location = new System.Drawing.Point(541, 313);
+            this.textBoxNarudzba.Name = "textBoxNarudzba";
+            this.textBoxNarudzba.Size = new System.Drawing.Size(77, 19);
+            this.textBoxNarudzba.TabIndex = 2;
             // 
             // label10
             // 
@@ -581,11 +571,16 @@
             // 
             // dataGridView2
             // 
+            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Location = new System.Drawing.Point(8, 6);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.Size = new System.Drawing.Size(770, 295);
             this.dataGridView2.TabIndex = 0;
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // Form2
             // 
@@ -611,6 +606,7 @@
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -619,8 +615,8 @@
 
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.Button buttonAzurirajKolicinu;
-        private System.Windows.Forms.Button buttonDodajKolicinu;
+        private System.Windows.Forms.Button buttonAzurirajArtikal;
+        private System.Windows.Forms.Button buttonDodajArtikal;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox textBoxIDartikla;
         private System.Windows.Forms.TextBox textBoxKolicinaArtikala;
@@ -628,13 +624,12 @@
         private System.Windows.Forms.TextBox textBoxVrstaArtikla;
         private System.Windows.Forms.TextBox textBoxNazivArtikla;
         private System.Windows.Forms.TextBox textBoxNazivTrazi;
-        private System.Windows.Forms.TextBox textBoxSifraArtikla;
+        private System.Windows.Forms.TextBox textBoxSifraTrazi;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.DataGridView dataGridView3;
-        private System.Windows.Forms.Button buttonTraziArtikal;
         private System.Windows.Forms.Button buttonAzurirajKupca;
         private System.Windows.Forms.Button buttonKreirajKupca;
         private System.Windows.Forms.Label label8;
@@ -656,14 +651,14 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button buttonTraziKupac;
         private System.Windows.Forms.TabControl tabControlAdministrator;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.NumericUpDown numericUpDownKolicina;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxNarudzba;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
 
     }
 }
